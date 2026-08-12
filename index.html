@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>דשבורד עלויות – בית תל מונד</title>
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body><div class="app">
 <div class="top"><div><div class="title">דשבורד עלויות – בית תל מונד</div><div class="hint">GitHub Pages + נתונים בענן Supabase</div></div><div id="cloud" class="cloud">מתחבר לענן…</div></div>
 <div class="tabs"><button class="tab on" data-tab="overview">תמונת מצב</button><button class="tab" data-tab="expenses">הוצאות</button><button class="tab" data-tab="estimate">אומדן</button><button class="tab" data-tab="contractor">חוזה אריק</button></div>
 <section id="overview" class="panel on"><div id="overviewKpis" class="kpis primaryKpis"></div><div class="card"><div class="sectionTitle">הוצאות לפי סיווג</div><div class="hint">עבור עם העכבר על כל בר כדי לראות את ההוצאות שמרכיבות אותו; לחיצה תפתח פירוט מלא.</div><div id="catChart" class="chart"></div></div></section>
 <section id="expenses" class="panel"><div id="expenseKpis" class="kpis"></div><div class="card"><div class="sectionTitle">הוספת הוצאה</div><div class="addrow"><input id="newDate" type="date"><input id="newDesc" class="txt" placeholder="תיאור"><input id="newAmount" type="number" placeholder="סכום"><button id="addExpense" class="btn">הוסף</button></div></div><div class="tablewrap"><table><thead><tr><th>תאריך</th><th>תיאור</th><th>סכום</th><th>שולם בפועל</th><th>סטטוס</th><th>קטגוריה</th><th>יחס לאומדן</th><th>מזומן</th><th>יחידה אחורית</th><th>יחידה אחורית – הערות</th><th>מחיקה</th></tr></thead><tbody id="expenseRows"></tbody></table></div></section>
-<section id="estimate" class="panel"><div id="estimateKpis" class="kpis"></div><div id="contractorEstimateCard" class="card"></div><div class="card"><div class="hint">האומדן מחולק לשלוש קטגוריות ראשיות: קבלן, חומר לבן ושונות לבית. בתוך חומר לבן ושונות לבית מוצגות גם תתי-הקטגוריות המקוריות מהאקסל.</div></div><div class="tablewrap"><table><thead><tr><th>קטגוריה ראשית</th><th>תת־קטגוריה</th><th>סעיף</th><th>אומדן</th><th>הוזמן</th><th>סכום שהוזמן</th><th>פער מול האומדן</th><th class="deleteEstimateHead">מחיקה</th></tr></thead><tbody id="estimateRows"></tbody></table></div></section>
+<section id="estimate" class="panel"><div id="estimateKpis" class="kpis"></div><div id="contractorEstimateCard" class="card"></div><div class="card"><div class="hint">כל שדות האומדן ניתנים לעריכה: קטגוריה ראשית, תת־קטגוריה, סעיף, סכום אומדן וסכום שהוזמן.</div></div><div class="tablewrap"><table><thead><tr><th>קטגוריה ראשית</th><th>תת־קטגוריה</th><th>סעיף</th><th>אומדן</th><th>הוזמן</th><th>סכום שהוזמן</th><th>פער מול האומדן</th><th class="deleteEstimateHead">מחיקה</th></tr></thead><tbody id="estimateRows"></tbody></table></div></section>
 <section id="contractor" class="panel"><div id="contractorKpis" class="kpis"></div><div class="grid2"><div class="card"><div class="sectionTitle">תוספות לחוזה אריק</div><div class="hint">בסיס הקבלן הוא החוזה כולל מע״מ + התוספות שהוזנו.</div><div class="addrow"><input id="addName" class="txt" placeholder="תיאור תוספת"><input id="addAmount" type="number" placeholder="סכום"><button id="addContractorAdd" class="btn">הוסף תוספת</button></div><div id="contractorAdds"></div></div><div class="card"><div class="sectionTitle">חוזה ותשלומים בפועל</div><div id="contractorCalc"></div></div></div><div class="card"><div class="sectionTitle">מפרט תשלומים – אריק</div><div class="hint">כל סכום שמוזן כ"שולם בפועל" נחשב תשלום סופי. תשלום נמוך מהמפרט הוא חיסכון; תשלום גבוה הוא עלות נוספת.</div><div class="tablewrap"><table><thead><tr><th>שלב</th><th>פירוט</th><th>סכום לפי מפרט</th><th>שולם בפועל</th><th>מתוכו מזומן</th><th>סטטוס</th><th>פער מול המפרט</th><th>הערה</th></tr></thead><tbody id="milestones"></tbody></table></div></div></section>
 </div>
 <div id="modal" class="modal"><div class="modalbox"><div class="modalhead"><h3 id="modalTitle"></h3><button id="closeModal" class="close">×</button></div><div id="modalBody"></div></div></div>
 <div id="tooltip" class="tooltip"></div>
-<script src="app.js?v=11"></script>
-<script src="patch-v6.js?v=11"></script>
-<script src="patch-v7.js?v=11"></script>
-<script src="patch-v8.js?v=11"></script>
-<script src="patch-v9.js?v=11"></script>
-<script src="patch-v10.js?v=11"></script>
-<script src="patch-v11.js?v=11"></script>
+<script src="app.js?v=12"></script>
+<script src="patch-v6.js?v=12"></script>
+<script src="patch-v7.js?v=12"></script>
+<script src="patch-v8.js?v=12"></script>
+<script src="patch-v9.js?v=12"></script>
+<script src="patch-v10.js?v=12"></script>
+<script src="patch-v11.js?v=12"></script>
+<script src="patch-v12.js?v=12"></script>
 </body></html>
